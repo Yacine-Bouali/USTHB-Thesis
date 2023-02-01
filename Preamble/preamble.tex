@@ -1,0 +1,121 @@
+%% Encodings packages
+\usepackage[utf8]{inputenc} % Specify an input encoding UTF8
+\usepackage[T1]{fontenc}    % Font encodings
+%% Math packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{makeidx}
+%% Figures
+\usepackage{graphicx}		% Including Graphics Files, delete the demo option if you want to include your owen Figs
+\usepackage{epstopdf}	    % adds support of handling eps images
+\usepackage{float} 			% Force the placement of Figs 
+%% Language
+\usepackage[english,arabic,main=french]{babel} % Set the language
+%\addto\captionsfrench{\def\tablename{Tableau}}
+%% Page layout
+\usepackage[left=25mm,right=25mm,top=35mm,bottom=30mm]{geometry} % Margines
+\usepackage{afterpage}
+%% Set the Footer and the Header
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\cfoot{\thepage} % the page number in the foot center
+\renewcommand{\headrule}{\hrule height 0pt \vspace{0mm}\hrule height 0pt} % remove plain header rule
+}  % reset the page style bcz the arabicore.sty was loaded in the babel
+
+\newcommand{\changefont}{%
+	\fontsize{9}{11}\selectfont
+}
+\fancyhf{}
+\pagestyle{fancy}
+%\fancyhead[LE,RO]{\changefont \slshape \rightmark} %section
+\fancyhead[RE,LO]{\changefont \slshape \leftmark} %chapter
+\fancyfoot[C]{\changefont \thepage} %footer
+% Table
+\usepackage{array}	    % Fixed length either for each column or for the entire table
+\usepackage{tabularx}	% Control the width the entire table
+\usepackage{multirow}	% Merged rows and columns
+\usepackage{longtable}	% Insert a very long table,
+\usepackage{booktabs}   % To thicken table lines
+%% Space line
+\usepackage{setspace}
+\onehalfspacing
+%% Customization of captions
+\usepackage[font=small,labelfont=bf]{caption} 
+\captionsetup[table]{name=Tableau}			  
+\captionsetup[figure]{name=Figure}			
+\usepackage[nottoc]{tocbibind} %list of figures and list of tables are added in the toc
+\usepackage{subcaption}
+%\usepackage{subfig}
+\usepackage[lined,ruled,vlined,french,algochapter,dotocloa]{algorithm2e} % For writing algorithms
+%%
+\usepackage{appendix}
+
+%% Generate Random Text
+\usepackage{blindtext}
+\usepackage{lipsum}
+%%
+\usepackage{siunitx}[=v2] 
+\usepackage{ifthen}
+%% List of Symbols
+\usepackage[intoc]{nomencl}
+\makenomenclature
+\renewcommand{\nomgroup}[1]{%
+	\ifthenelse{\equal{#1}{R}}{\item[\textbf{Symboles Romains}]}{%
+		\ifthenelse{\equal{#1}{G}}{\item[\textbf{Symboles Grecs}]}{%
+			\ifthenelse{\equal{#1}{A}}{\item[\textbf{Acronymes / Abréviations}]}{%
+				\ifthenelse{\equal{#1}{S}}{\item[\textbf{Autres Symboles}]}{% 
+				}% Mathematical symbols > S
+			}% Abbreviations        > A
+		}% Greek Symbols        > G
+	}% Roman Symbols        > R
+}
+
+\setlength{\nomlabelwidth}{3cm}
+%%
+\usepackage{pdfpages} % insertion of external multi-page PDF or PS documents
+\usepackage{cite}
+%% New Environment
+\theoremstyle{plain}
+\newtheorem{theorem}{Théorème}[chapter]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Définition}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remarque}
+
+\newenvironment{dedication}
+{
+	\cleardoublepage
+	\thispagestyle{empty}
+	\vspace*{\stretch{1}}
+	\hfill
+	\begin{minipage}[t]{0.66\textwidth}
+		\raggedright
+	}{\end{minipage}\vspace*{\stretch{3}}\clearpage}
+
+\setcounter{secnumdepth}{3}
+\usepackage{tocvsec2} % Used to delete the sections of the appendix from the ToC
+\usepackage{pifont}  % More styles for bullets
+\usepackage{bm}		 % Access bold math symbols
+%% Referring to Figure and Table in the text (you can use the classical way)
+\newcommand{\fig}[1]{Figure.~\ref{#1}}
+\newcommand{\tab}[1]{Tableau.~\ref{#1}}
+%%
+\usepackage{hyperref}
+\hypersetup{
+	final=true,
+	plainpages=false,
+	pdfstartview=FitV,
+	pdftoolbar=true,
+	pdfmenubar=true,
+	bookmarksopen=true,
+	bookmarksnumbered=true,
+	breaklinks=true,
+	linktocpage,
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=black
+}
