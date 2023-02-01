@@ -1,0 +1,59 @@
+%% This Template was developed By: Yacine Bouali  
+%% e-mail: 
+%% yacinebouali26@gmail.com 
+%% ybouali@usthb.dz
+\immediate\write18{makeindex \jobname.nlo -s nomencl.ist -o \jobname.nls} % Use this line to generate auto Nomenclature
+\documentclass[12pt,a4paper,oneside]{report}
+\input{Preamble/preamble}
+\begin{document}
+	%% frontmatter
+	\pagenumbering{gobble}	
+	\include{0-TitlePage/TitlePage}
+	\include{1-Dedication/dedication}
+	\pagestyle{empty}
+	\include{2-Acknowledgement/acknowledgement}
+	\include{3-Abstract/abstract}
+	\pagestyle{fancy}
+	\tableofcontents
+	\clearpage
+	\newpage
+	
+	\pagenumbering{roman}
+	\cleardoublepage
+	\listoffigures
+	\cleardoublepage
+	\listoftables
+	\cleardoublepage
+	\listofalgorithms
+	\cleardoublepage  
+	\markboth{\MakeUppercase\nomname}{\MakeUppercase\nomname}
+	\printnomenclature
+	\clearpage
+	\newpage
+	
+	%% mainmatter
+	\pagenumbering{arabic}	
+	\include{4-Introduction/Introduction}
+	\include{5-Chapters/Chapter1/Chapter1}
+	\include{5-Chapters/Chapter2/Chapter2}
+	\include{5-Chapters/Chapter3/Chapter3}
+	\include{6-Conclusion/Conclusion}
+	\bibliographystyle{unsrt}
+	\bibliography{Mabib}
+	\clearpage
+	\newpage
+	
+	%% backmatter	
+	\pagenumbering{Alph}
+	\begin{appendices}
+	%% Appendix Configuration
+	\renewcommand{\thechapter}{\Alph{chapter}}
+	\renewcommand{\thesection}{\thechapter.\arabic{section}}
+	\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+	\renewcommand\thefigure{\thechapter.\arabic{figure}} 
+	\renewcommand\thetable{\thechapter.\arabic{table}}	
+	%% Add Appendix
+	\include{7-Appendix/Appendix1/appendix1}
+	\include{7-Appendix/Appendix2/appendix2}	
+	\end{appendices}
+\end{document}
