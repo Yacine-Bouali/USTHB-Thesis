@@ -1,0 +1,54 @@
+\chapter{Title of the chapter}
+\section{Introduction}
+\blindtext
+\section{Nomenclature examples}
+courant continu (DC\nomenclature[a-dictCur]{DC}{Courant continu (Direct current)}), courant alternatif (AC\nomenclature[a-AltCur]{AC}{Courant alternatif (Alternating current)}), le système photovoltaïque (PV) \nomenclature[a-phot]{PV}{Photovoltaïque}
+\begin{equation}\label{Iph}
+I_{ph}=\frac{G}{G_r}\left(I_{sc}+\alpha_{sc}(T_{cell}-T_{ref})\right)
+\end{equation}
+%%
+\nomenclature[s-Ecl]{$G$}{Eclairement sur la surface de la cellule}
+\nomenclature[s-Eclref]{$G_r$}{Eclairement de référence (1000 \si{\watt/\meter\square})}
+\nomenclature[s-ISC]{$I_{sc}$}{Courant du court-circuit (short-circuit current)}
+\nomenclature[g-CoefTisc]{$\alpha_{sc}$}{Coefficient de température de $I_{sc}$}
+\nomenclature[s-TempCell]{$T_{cell}$}{Température sur la surface de la cellule}
+\nomenclature[s-TempCellRef]{$T_{ref}$}{Température de référence (25 \si{\degreeCelsius})}
+%%
+\\
+\begin{equation}
+	E=\frac{1}{2}mv^2
+	\nomenclature[s-ener]{$E$}{ Energy}
+	\nomenclature[s-mas]{$m$}{ Mass}
+	\nomenclature[s-velo]{$v$}{ Velocity}
+\end{equation}
+Use \verb|	\nomenclature[s-ener]{$E$}{ Energy}| to add a  symbols in the Nomenclature List
+
+The \verb|s| for the type and \verb|ener| for alphabetical order
+\verb|{$E$}| for the symbol and \verb*|{Energy}| the signification of the symbols
+
+\section{Figures and Tables examples}
+Dans la \fig{figLabel}, et dans le \tab{tabLabel}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.55\linewidth,scale=1.0]{5-Chapters/Chapter1/drawing.eps}
+	\caption[Short title of the figure]{Long title of the figure\label{figLabel}}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Les paramètres du module photovoltaïque 
+		\label{tabLabel}}
+	\begin{tabular}{@{\extracolsep{\fill}}lll@{}}
+		\toprule
+		Paramètres & Valeurs & Unités\\
+		\midrule			
+		$P_{mp}$& 100& \si{\watt}\\
+		\midrule
+		$V_{oc}$& 13.3& \si{\volt}\\
+		\midrule
+		$I_{sc}$& 9.8& \si{\ampere}\\							
+		\bottomrule
+	\end{tabular}
+\end{table}
+\section{Conclusion}
+\blindtext
