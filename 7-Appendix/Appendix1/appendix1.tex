@@ -1,0 +1,43 @@
+% ******************************* Thesis Appendix A ****************************
+\chapter{Title of the Appendix}
+\settocdepth{chapter}
+\section{Title of the section}
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e }
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
+	\caption{How to write algorithms}
+\end{algorithm}
+\section{Title of the section}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.55\linewidth,scale=1.0]{5-Chapters/Chapter1/drawing.eps}
+	\caption[Short title of the figure]{Long title of the figure\label{figLabel2}}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Les paramètres du module photovoltaïque 
+		\label{tabLabel2}}
+	\begin{tabular}{@{\extracolsep{\fill}}lll@{}}
+		\toprule
+		Paramètres & Valeurs & Unités\\
+		\midrule			
+		$P_{mp}$& 100& \si{\watt}\\
+		\midrule
+		$V_{oc}$& 13.3& \si{\volt}\\
+		\midrule
+		$I_{sc}$& 9.8& \si{\ampere}\\							
+		\bottomrule
+	\end{tabular}
+\end{table}
