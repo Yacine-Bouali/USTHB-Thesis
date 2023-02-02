@@ -119,3 +119,12 @@
 	citecolor=blue,
 	anchorcolor=black
 }
+
+%% Solve the problem with inserting the symbols \times and \omega when using arabicin the babel
+\DeclareRobustCommand{\timesr}{\fontfamily{artimes}\selectfont}
+\let\times\relax
+\DeclareMathSymbol{\times}{\mathbin}{symbols}{"02}
+
+\DeclareRobustCommand{\omegar}{\fontfamily{aromega}\selectfont}
+\let\omega\relax
+\DeclareMathSymbol{\omega}{\mathord}{letters}{"21}
