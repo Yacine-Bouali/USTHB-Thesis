@@ -16,5 +16,6 @@ This template has also the following properties:
 - The main Language is French, but it's easy to switch to English
 - Files management is easy and clear
 - The most used packages are included in the Preamble
+- The title page has been updated according to USTHB requirements.
 
 The template available in [Overleaf](https://www.overleaf.com/latex/templates/usthb-thesis/jwbcnbcgrkdq)
